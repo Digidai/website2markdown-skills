@@ -1,12 +1,12 @@
 # website2markdown-skill
 
-> A Claude Code skill for converting web pages to clean Markdown via the [Website2Markdown](https://md.genedai.me) API.
+> An [AgentSkills](https://agentskills.io/specification)-compatible skill for converting web pages to clean Markdown via the [Website2Markdown](https://md.genedai.me) API. Works with **Claude Code**, **OpenClaw**, and any AgentSkills-compatible agent.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## What It Does
 
-This skill teaches Claude Code how to convert any web page to Markdown using the `md.genedai.me` API. It handles JS-heavy SPAs, paywalled content, and Chinese platforms that WebFetch can't reliably process.
+This skill teaches AI agents how to convert any web page to Markdown using the `md.genedai.me` API. It handles JS-heavy SPAs, paywalled content, and Chinese platforms that standard web fetching tools can't reliably process.
 
 ### Key Capabilities
 
@@ -29,7 +29,7 @@ This skill teaches Claude Code how to convert any web page to Markdown using the
 
 ## Installation
 
-### Option 1: Clone and copy
+### Claude Code
 
 ```bash
 git clone https://github.com/dai/website2markdown-skill.git
@@ -39,50 +39,58 @@ cp -r website2markdown-skill/references/ ~/.claude/skills/website2markdown/
 cp -r website2markdown-skill/assets/ ~/.claude/skills/website2markdown/
 ```
 
-### Option 2: Manual copy
+### OpenClaw
 
-Download the files and place them in `~/.claude/skills/website2markdown/`:
+**Via ClawHub (recommended):**
 
-```
-~/.claude/skills/website2markdown/
-├── SKILL.md
-├── references/
-│   ├── advanced-apis.md
-│   └── platform-adapters.md
-└── assets/
-    └── recipes.md
+```bash
+npx clawhub@latest install website2markdown
 ```
 
-### Verify installation
+**Manual install:**
 
-Open a new Claude Code session and ask:
+```bash
+git clone https://github.com/dai/website2markdown-skill.git
+mkdir -p ~/.openclaw/skills/website2markdown
+cp website2markdown-skill/SKILL.md ~/.openclaw/skills/website2markdown/
+cp -r website2markdown-skill/references/ ~/.openclaw/skills/website2markdown/
+cp -r website2markdown-skill/assets/ ~/.openclaw/skills/website2markdown/
+```
+
+### Other AgentSkills-Compatible Agents
+
+Copy the skill directory into your agent's skills folder. The `SKILL.md` follows the [AgentSkills specification](https://agentskills.io/specification) and works with any compatible agent (Cursor, GitHub Copilot, Windsurf, etc.).
+
+### Verify Installation
+
+Open a new agent session and ask:
 
 ```
 Read this article: https://example.com
 ```
 
-Claude should use `curl -s "https://md.genedai.me/..."` instead of WebFetch.
+The agent should use `curl -s "https://md.genedai.me/..."` to fetch the content.
 
 ## Usage Preview
 
-Once installed, Claude Code will automatically use this skill when appropriate:
+Once installed, the agent will automatically use this skill when appropriate:
 
 ```
 You: Read this WeChat article: https://mp.weixin.qq.com/s/xxxxx
 
-Claude: [Uses website2markdown API with force_browser=true, returns clean Markdown]
+Agent: [Uses website2markdown API with force_browser=true, returns clean Markdown]
 ```
 
 ```
 You: Compare these three blog posts: [url1] [url2] [url3]
 
-Claude: [Uses batch API to fetch all three in one request]
+Agent: [Uses batch API to fetch all three in one request]
 ```
 
 ```
 You: Extract the title and price from this product page
 
-Claude: [Uses extract API with CSS selectors]
+Agent: [Uses extract API with CSS selectors]
 ```
 
 ## Project Structure
@@ -129,11 +137,23 @@ curl -s "https://md.genedai.me/api/health"
 
 See [`assets/recipes.md`](assets/recipes.md) for more examples.
 
+## Compatibility
+
+This skill follows the [AgentSkills](https://agentskills.io/specification) open standard and works with:
+
+| Platform | Skills Directory | Install Method |
+|----------|-----------------|----------------|
+| **Claude Code** | `~/.claude/skills/website2markdown/` | Manual copy |
+| **OpenClaw** | `~/.openclaw/skills/website2markdown/` | `clawhub install` or manual |
+| **Cursor** | Workspace `skills/` directory | Manual copy |
+| **GitHub Copilot** | Agent skills directory | Manual copy |
+| **Windsurf** | Agent skills directory | Manual copy |
+
 ## Contributing
 
 1. Fork the repository
 2. Make your changes
-3. Test by copying to `~/.claude/skills/website2markdown/` and opening a new Claude Code session
+3. Test by copying to your agent's skills directory and opening a new session
 4. Submit a pull request
 
 ### Guidelines
@@ -142,6 +162,7 @@ See [`assets/recipes.md`](assets/recipes.md) for more examples.
 - Detailed API docs go in `references/`
 - Practical curl examples go in `assets/recipes.md`
 - All curl examples must use `curl -s` and include `?raw=true`
+- Frontmatter must follow AgentSkills spec (OpenClaw metadata on single line)
 
 ## License
 
