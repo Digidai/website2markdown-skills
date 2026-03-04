@@ -1,4 +1,4 @@
-# website2markdown-skill
+# website2markdown-skills
 
 > An [AgentSkills](https://agentskills.io/specification)-compatible skill for converting web pages to clean Markdown via the [Website2Markdown](https://md.genedai.me) API. Works with **Claude Code**, **OpenClaw**, and any AgentSkills-compatible agent.
 
@@ -32,11 +32,11 @@ This skill teaches AI agents how to convert any web page to Markdown using the `
 ### Claude Code
 
 ```bash
-git clone https://github.com/dai/website2markdown-skill.git
+git clone https://github.com/Digidai/website2markdown-skillss.git
 mkdir -p ~/.claude/skills/website2markdown
-cp website2markdown-skill/SKILL.md ~/.claude/skills/website2markdown/
-cp -r website2markdown-skill/references/ ~/.claude/skills/website2markdown/
-cp -r website2markdown-skill/assets/ ~/.claude/skills/website2markdown/
+cp website2markdown-skills/SKILL.md ~/.claude/skills/website2markdown/
+cp -r website2markdown-skills/references/ ~/.claude/skills/website2markdown/
+cp -r website2markdown-skills/assets/ ~/.claude/skills/website2markdown/
 ```
 
 ### OpenClaw
@@ -50,11 +50,11 @@ npx clawhub@latest install website2markdown
 **Manual install:**
 
 ```bash
-git clone https://github.com/dai/website2markdown-skill.git
+git clone https://github.com/Digidai/website2markdown-skillss.git
 mkdir -p ~/.openclaw/skills/website2markdown
-cp website2markdown-skill/SKILL.md ~/.openclaw/skills/website2markdown/
-cp -r website2markdown-skill/references/ ~/.openclaw/skills/website2markdown/
-cp -r website2markdown-skill/assets/ ~/.openclaw/skills/website2markdown/
+cp website2markdown-skills/SKILL.md ~/.openclaw/skills/website2markdown/
+cp -r website2markdown-skills/references/ ~/.openclaw/skills/website2markdown/
+cp -r website2markdown-skills/assets/ ~/.openclaw/skills/website2markdown/
 ```
 
 ### Other AgentSkills-Compatible Agents
@@ -96,7 +96,7 @@ Agent: [Uses extract API with CSS selectors]
 ## Project Structure
 
 ```
-website2markdown-skill/
+website2markdown-skills/
 ├── README.md                      # This file
 ├── CLAUDE.md                      # Development context for contributors
 ├── LICENSE                        # MIT License

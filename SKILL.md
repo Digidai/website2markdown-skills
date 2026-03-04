@@ -3,7 +3,7 @@ name: website2markdown
 description: Convert web pages to clean Markdown using the Website2Markdown API (md.genedai.me). Use when you need to fetch, read, extract, or analyze web page content — especially when WebFetch fails, returns incomplete content, or the target is JS-heavy/paywalled. Supports single URL conversion, batch processing (up to 10 URLs), structured data extraction (CSS/XPath/Regex), deep crawling (BFS/BestFirst), and 21 platform adapters (WeChat, Zhihu, Feishu, Notion, Twitter/X, Reddit, etc.).
 version: "1.0.0"
 license: MIT
-metadata: {"openclaw": {"requires": {"bins": ["curl"]}, "primaryEnv": "API_TOKEN", "emoji": "📄", "homepage": "https://github.com/dai/website2markdown-skill"}}
+metadata: {"openclaw": {"requires": {"bins": ["curl"]}, "primaryEnv": "API_TOKEN", "emoji": "📄", "homepage": "https://github.com/Digidai/website2markdown-skills"}}
 ---
 
 # Website2Markdown
