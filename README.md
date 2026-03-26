@@ -3,6 +3,9 @@
 > An [AgentSkills](https://agentskills.io/specification)-compatible skill for converting web pages to clean Markdown via the [Website2Markdown](https://md.genedai.me) API. Works with **Claude Code**, **OpenClaw**, and any AgentSkills-compatible agent.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![API](https://img.shields.io/badge/API-md.genedai.me-22d3ee)](https://md.genedai.me)
+[![Main Repo](https://img.shields.io/badge/Source-website2markdown-black?logo=github)](https://github.com/Digidai/website2markdown)
+[![npm](https://img.shields.io/npm/v/@digidai/mcp-website2markdown?label=MCP%20Server)](https://www.npmjs.com/package/@digidai/mcp-website2markdown)
 
 ## What It Does
 
