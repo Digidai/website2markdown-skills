@@ -148,6 +148,7 @@ All advanced APIs require `Authorization: Bearer <API_TOKEN>` header.
 | **Deep Crawl** | `POST /api/deepcrawl` | Crawl a site with filtering and scoring |
 | **Jobs** | `POST /api/jobs` | Async task queue for long-running operations |
 | **Health** | `GET /api/health` | Service health check (no auth needed) |
+| **llms.txt** | `GET /llms.txt` | API description for AI discoverability |
 
 ### Batch API (quick example)
 

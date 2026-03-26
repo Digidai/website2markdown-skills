@@ -32,7 +32,7 @@ This skill teaches AI agents how to convert any web page to Markdown using the `
 ### Claude Code
 
 ```bash
-git clone https://github.com/Digidai/website2markdown-skillss.git
+git clone https://github.com/Digidai/website2markdown-skills.git
 mkdir -p ~/.claude/skills/website2markdown
 cp website2markdown-skills/SKILL.md ~/.claude/skills/website2markdown/
 cp -r website2markdown-skills/references/ ~/.claude/skills/website2markdown/
@@ -50,7 +50,7 @@ npx clawhub@latest install website2markdown
 **Manual install:**
 
 ```bash
-git clone https://github.com/Digidai/website2markdown-skillss.git
+git clone https://github.com/Digidai/website2markdown-skills.git
 mkdir -p ~/.openclaw/skills/website2markdown
 cp website2markdown-skills/SKILL.md ~/.openclaw/skills/website2markdown/
 cp -r website2markdown-skills/references/ ~/.openclaw/skills/website2markdown/
@@ -119,6 +119,7 @@ website2markdown-skills/
 | Deep Crawl | `POST /api/deepcrawl` | Yes | Site crawling with filters |
 | Jobs | `POST /api/jobs` | Yes | Async task management |
 | Health | `GET /api/health` | No | Service status check |
+| llms.txt | `GET /llms.txt` | No | API description for AI systems |
 
 **API Base URL:** `https://md.genedai.me`
 
@@ -148,6 +149,20 @@ This skill follows the [AgentSkills](https://agentskills.io/specification) open 
 | **Cursor** | Workspace `skills/` directory | Manual copy |
 | **GitHub Copilot** | Agent skills directory | Manual copy |
 | **Windsurf** | Agent skills directory | Manual copy |
+
+## Skills vs MCP Server
+
+This project also provides an [MCP Server](https://www.npmjs.com/package/@digidai/mcp-website2markdown) (`npm install -g @digidai/mcp-website2markdown`). Choose based on your agent:
+
+| | Skills (this repo) | MCP Server |
+|---|---|---|
+| **Best for** | Claude Code, OpenClaw, Codex, Claw | Claude Desktop, Cursor IDE |
+| **Install** | Copy a .md file | `npm install -g` + JSON config |
+| **Latency** | Direct curl (fastest) | Agent → MCP protocol → subprocess → HTTP |
+| **Context** | Rich usage guide, patterns, error handling | Tool schema only |
+| **Maintenance** | `git pull` | `npm update` |
+
+**Rule of thumb:** If your agent has terminal/bash access, use Skills. If it only has MCP tool access (no terminal), use the MCP Server.
 
 ## Contributing
 
